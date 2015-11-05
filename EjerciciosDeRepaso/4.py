@@ -7,17 +7,16 @@
 # b) Los valores no son válidos. Cuando, aunque el formato sea correcto, el valor de las horas,
 # minutos o segundos no se válido
 # c) Valores válidos, son las hh horas, mm minutos y ss segundos
+def valido (hora):
+    partido = hora.split(":")
+    #comprueba longitud
+    if len(hora) > 8:
+        print("Formato incorrecto")
+    elif int(partido[0])<=12 and int(partido[0])>=0 and int(partido[1]) <= 60 and int(partido[1])>=0 and int(partido[2])<=60 and int(partido[2])>=0:
+        print("Correcto, la hora es " + hora)
+    else:
+        print('Formato incorrecto')
 
 hora = raw_input("Introduce una hora: ")
 
-def valido (hora):
-    partido = hora.split(":")
-    print partido
-    #comprueba longitud
-    if len(hora) == 8:
-        print("Formato incorrecto")
-    elif len(partido[0])==2 and len(partido[1]==2) and len(partido(2))==2:
-        print("Formato incorrecto")
-    elif partido[0]<=12 and partido[1] <= 60 and partido[2]<=60:
-        print("Correcto")
-
+valido(hora)
