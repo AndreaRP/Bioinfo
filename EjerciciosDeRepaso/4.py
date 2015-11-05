@@ -12,7 +12,8 @@ def valido (hora):
     #comprueba longitud
     if len(hora) > 8:
         print("Formato incorrecto")
-    elif int(partido[0])<=12 and int(partido[0])>=0 and int(partido[1]) <= 60 and int(partido[1])>=0 and int(partido[2])<=60 and int(partido[2])>=0:
+    elif int(partido[0])<=12 and int(partido[0])>=0 and int(partido[1]) <= 60 \
+            and int(partido[1])>=0 and int(partido[2])<=60 and int(partido[2])>=0:
         print("Correcto, la hora es " + hora)
     else:
         print('Formato incorrecto')
