@@ -27,3 +27,5 @@ codones = [secuencia[i:i+3] for i in range(0, len(secuencia), 3)]
 
 for i in codones:
     print(ribosoma(i)),
+
+print('tada!')
