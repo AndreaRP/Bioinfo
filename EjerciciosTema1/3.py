@@ -1,5 +1,5 @@
 #coding=utf-8
-#Modificar el ejercicio anterior para que elimine los signos de puntuación de las palabras
+#Modificar el ejercicio anterior para que muestre sólo las cien palabras más frecuentes ordenadas por número de aparición
 
 import string
 
