@@ -17,7 +17,7 @@ f = open(nombre)
 lineas = f.readlines()
 
 
-#recorremos cada linea del array, le borramos los retornos de carro (\n) y vamos añadiendo cada palabra a palabras
+#recorremos cada linea del array, le borramos los retornos de carro (\n) y vamos añadiendo cada base a palabras
 for linea in lineas:
     linea = linea.strip()
     #sustituimos los signos de puntuación por carácter vacío
@@ -26,5 +26,6 @@ for linea in lineas:
         if palabra not in map.keys():
             map.update({palabra:1})
         else:
-            map[palabra]+=1
+           map[palabra]+=1
+f.close()
 print map
