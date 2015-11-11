@@ -2,25 +2,28 @@
 #Realizar un programa que pida al usuario el nombre de un fichero, lo abra, cuente cuántas palabras
 # de cada tipo existen y lo muestre por pantalla
 
+#Pedimos el nombre del fichero
 nombre = raw_input("Nombre del fichero: ")
-f = open("hola.txt")
-g = open("destino.txt","w")
-#Abrir fichero de lectura : f = open("fichero.txt")
-#Abrir fichero de lectura : f = open("fichero.txt", "r")
-#Abrir fichero de lectura en binario : f = open("fichero.txt", "rb")
-#Abrir fichero para escribir desde cero : f = open ("fichero.txt", "w")
-#Abrir fichero para añadir al final : f = open ("fichero.txt", "a")
-for linea in f:
-	print(linea)
-	g.write(linea)
-g.close()
-f.close()
 
-#f = open("origen.txt")
-#g = open("destino.txt","w")
-#linea = f.readline()
-#while linea != "":
-#  g.write(linea)
-#  linea = f.readline()
-#g.close()
-#f.close()
+#apuntamos al fichero
+f = open(nombre)
+
+#metemos las lineas en un array
+lineas = f.readlines()
+# declaramos un nuevo array en el que meteremos las palabras
+palabras = []
+
+#recorremos cada linea del array, le borramos los retornos de carro (\n) y vamos metiendo las palabras en el array
+for linea in lineas:
+	linea = linea.strip()
+	for palabra in linea.split(' '):
+		palabras.append(palabra)
+
+#creamos el diccionario donde guardaremos el numero de palabras
+map = {}
+for i in palabras:
+        if i not in map.keys():
+            map.update({i:1})
+        else:
+            map[i]+=1
+print map
