@@ -16,7 +16,6 @@ f = open(nombre)
 #metemos las lineas en un array
 lineas = f.readlines()
 
-
 #recorremos cada linea del array, le borramos los retornos de carro (\n) y vamos añadiendo cada palabra a palabras
 for linea in lineas:
     linea = linea.strip()
