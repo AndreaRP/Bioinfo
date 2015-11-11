@@ -12,18 +12,13 @@ f = open(nombre)
 lineas = f.readlines()
 # declaramos un nuevo array en el que meteremos las palabras
 palabras = []
-
-#recorremos cada linea del array, le borramos los retornos de carro (\n) y vamos metiendo las palabras en el array
+map = {}
+#recorremos cada linea del array, le borramos los retornos de carro (\n) y vamos añadiendo cada palabra a palabras
 for linea in lineas:
 	linea = linea.strip()
 	for palabra in linea.split(' '):
-		palabras.append(palabra)
-
-#creamos el diccionario donde guardaremos el numero de palabras
-map = {}
-for i in palabras:
-        if i not in map.keys():
-            map.update({i:1})
-        else:
-            map[i]+=1
+		if palabra not in map.keys():
+			map.update({palabra:1})
+		else:
+			map[palabra]+=1
 print map
