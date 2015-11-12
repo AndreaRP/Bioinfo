@@ -8,7 +8,8 @@ import os
 n = 0
 files = filter(os.path.isfile, os.listdir(os.curdir))
 for file in files:
-    if file.split(".")[len(file)-1] == 'FASTA':
+    #SE PODRÁ??? o tengo que usar -1?
+    if file.split(".")[:1] == 'FASTA':
         origen = open(file)
         lineas = origen.readlines()
         info = lineas[0].split(" ",1)
