@@ -16,7 +16,7 @@ def leerArchivo(file):
     lineas = origen.readlines()
     for linea in lineas:
         propiedades = linea.split(';')
-
+        #atributos['nombre'] = propiedades[0] forma alternativa?
         atributos.update({'nombre':propiedades[0]})
         atributos.update({'autores':propiedades[1]})
         atributos.update({'revista':propiedades[2]})
