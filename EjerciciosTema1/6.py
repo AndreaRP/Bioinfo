@@ -5,6 +5,7 @@
 
 import os
 
+
 n = 0
 files = filter(os.path.isfile, os.listdir(os.curdir))
 for file in files:
