@@ -9,25 +9,23 @@
 # 4. Buscar si existe un artículo dando el nombre de un autor
 # 5. Listar todos los artículos de una determinada revista
 # Cada vez que se arranca el programa deberán recuperarse los datos almacenados previamente
-articulos = []
+ListArticulos = list()
 atributos={}
 def leerArchivo(file):
     origen = open(file)
     lineas = origen.readlines()
     for linea in lineas:
         propiedades = linea.split(';')
-
-        atributos.update({'nombre':propiedades[0]})
-        atributos.update({'autores':propiedades[1]})
-        atributos.update({'revista':propiedades[2]})
-        atributos.update({'fecha':propiedades[3]})
-        atributos.update({'ruta':propiedades[4]})
-        print(atributos)
-        articulos.append(atributos)
-        print(articulos)
-    atributos.clear()
+        atributos['nombre'] = propiedades[0]
+        atributos['autores'] = propiedades[1]
+        atributos['revista'] = propiedades[2]
+        atributos['fecha'] = propiedades[3]
+        atributos['ruta'] = propiedades[4]
+        #esta mierda pasa por referencia, tengo que hacer copy
+        ListArticulos.append(atributos.copy())
+        atributos.clear()
     origen.close()
-    return articulos
+    return ListArticulos
 
 articulos = leerArchivo('./articulos.txt')
 opcion = raw_input("Indica una opción: ")
@@ -41,7 +39,6 @@ while opcion != 'exit':
     elif opcion == '2':
         n=0
         for articulo in articulos:
-            print(articulo)
             n+=1
             print(n)
             print('nombre: '+articulo['nombre'])
