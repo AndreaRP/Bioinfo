@@ -62,4 +62,8 @@ while opcion != 'exit':
         for articulo in articulos:
             if articulo['revista'] == revistaQuery:
                 print(articulo['nombre'])
+    else:
+        print('Esa opción no es correcta')
+
     opcion = raw_input("Indica una opción: ")
+
